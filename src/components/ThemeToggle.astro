@@ -1,0 +1,96 @@
+---
+import type { Locale } from '@config/site';
+import { useTranslations } from '@i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<div class="relative" data-theme-toggle>
+  <button
+    type="button"
+    aria-label={t.theme.system}
+    class="flex items-center gap-1.5 rounded-full border border-(--border-color) bg-(--bg-card) px-3 py-1.5 text-sm font-medium text-(--text-secondary) transition-all duration-200 hover:border-(--border-accent) hover:shadow-sm cursor-pointer"
+    data-theme-btn
+  >
+    <svg class="size-4 hidden dark:block" data-icon-moon viewBox="0 0 20 20" fill="currentColor">
+      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+    </svg>
+    <svg class="size-4 block dark:hidden" data-icon-sun viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+    </svg>
+  </button>
+  <div
+    class="absolute right-0 top-full z-50 mt-2 hidden min-w-[120px] overflow-hidden rounded-xl border border-(--border-color) bg-(--bg-card) shadow-lg"
+    data-theme-menu
+  >
+    <button type="button" data-theme-option="light" class="flex w-full items-center gap-2 px-4 py-2.5 text-sm text-(--text-secondary) transition-colors hover:bg-(--bg-secondary) cursor-pointer">
+      <svg class="size-4" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+      </svg>
+      {t.theme.light}
+    </button>
+    <button type="button" data-theme-option="dark" class="flex w-full items-center gap-2 px-4 py-2.5 text-sm text-(--text-secondary) transition-colors hover:bg-(--bg-secondary) cursor-pointer">
+      <svg class="size-4" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+      </svg>
+      {t.theme.dark}
+    </button>
+    <button type="button" data-theme-option="system" class="flex w-full items-center gap-2 px-4 py-2.5 text-sm text-(--text-secondary) transition-colors hover:bg-(--bg-secondary) cursor-pointer">
+      <svg class="size-4" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd" />
+      </svg>
+      {t.theme.system}
+    </button>
+  </div>
+</div>
+
+<script>
+  function initThemeToggle() {
+    const container = document.querySelector('[data-theme-toggle]');
+    if (!container) return;
+
+    const btn = container.querySelector('[data-theme-btn]') as HTMLButtonElement;
+    const menu = container.querySelector('[data-theme-menu]') as HTMLElement;
+    const options = container.querySelectorAll('[data-theme-option]');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!container.contains(e.target as Node)) {
+        menu.classList.add('hidden');
+      }
+    });
+
+    function applyTheme(theme: string) {
+      const isDark =
+        theme === 'dark' ||
+        (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('dark', isDark);
+      localStorage.setItem('theme', theme);
+    }
+
+    options.forEach((option) => {
+      option.addEventListener('click', () => {
+        const theme = (option as HTMLElement).dataset.themeOption!;
+        applyTheme(theme);
+        menu.classList.add('hidden');
+      });
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (localStorage.getItem('theme') === 'system') {
+        applyTheme('system');
+      }
+    });
+  }
+
+  initThemeToggle();
+  document.addEventListener('astro:after-swap', initThemeToggle);
+</script>

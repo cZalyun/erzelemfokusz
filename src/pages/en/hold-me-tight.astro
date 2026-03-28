@@ -1,0 +1,77 @@
+---
+import Layout from '@layouts/Layout.astro';
+import PageHeader from '@components/PageHeader.astro';
+import { useTranslations } from '@i18n/utils';
+
+const t = useTranslations('en');
+---
+
+<Layout
+  title={`${t.holdMeTight.pageTitle} | ${t.meta.siteTitle}`}
+  description={t.meta.siteDescription}
+  locale="en"
+  canonicalPath="/en/hold-me-tight"
+>
+  <PageHeader title={t.holdMeTight.pageTitle} subtitle={t.holdMeTight.subtitle} />
+
+  <section class="py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="animate-on-scroll mb-10 rounded-2xl bg-(--bg-secondary) p-8 text-center">
+        <p class="font-heading text-xl font-medium italic leading-relaxed text-(--text-primary) sm:text-2xl">
+          {t.holdMeTight.heroQuote}
+        </p>
+        <p class="mt-4 font-heading text-3xl font-bold text-(--bg-accent) sm:text-4xl">
+          SEVEN STEPS TO LIFELONG LOVE!
+        </p>
+      </div>
+
+      <blockquote class="animate-on-scroll stagger-1 mb-10 border-l-4 border-(--bg-accent) pl-6">
+        <p class="font-heading text-lg italic leading-relaxed text-(--text-secondary)">
+          {t.holdMeTight.quoteText}
+        </p>
+        <footer class="mt-3 text-sm font-medium text-(--text-muted)">
+          — {t.holdMeTight.quoteAuthor}
+        </footer>
+      </blockquote>
+
+      <div class="animate-on-scroll stagger-2">
+        <p class="text-base leading-relaxed text-(--text-secondary)">
+          {t.holdMeTight.mainText}
+        </p>
+      </div>
+
+      <div class="animate-on-scroll stagger-3 mt-10">
+        <h3 class="mb-4 font-heading text-xl font-semibold text-(--text-primary)">
+          {t.holdMeTight.helpTitle}
+        </h3>
+        <ul class="space-y-3">
+          {t.holdMeTight.helpItems.map((item) => (
+            <li class="flex gap-3 text-sm leading-relaxed text-(--text-secondary)">
+              <div class="mt-2 size-1.5 flex-shrink-0 rounded-full bg-(--bg-accent)"></div>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="animate-on-scroll stagger-4 mt-10 flex flex-wrap justify-center gap-4">
+        {t.holdMeTight.highlights.map((highlight) => (
+          <span class="rounded-full bg-(--bg-accent)/10 px-6 py-3 text-sm font-semibold text-(--bg-accent)">
+            ~ {highlight}
+          </span>
+        ))}
+      </div>
+
+      <div class="animate-on-scroll stagger-5 mt-10 rounded-2xl border border-(--border-color) bg-(--bg-card) p-8 text-center shadow-sm">
+        <p class="text-lg font-semibold text-(--text-primary)">{t.holdMeTight.priceText}</p>
+        <p class="mt-2 text-sm text-(--text-muted)">{t.holdMeTight.scheduleText}</p>
+        <a
+          href="/en"
+          class="mt-6 inline-block rounded-xl bg-(--bg-accent) px-8 py-3 text-sm font-semibold text-(--text-on-accent) transition-all hover:opacity-90 hover:shadow-md"
+        >
+          {t.holdMeTight.ctaText}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

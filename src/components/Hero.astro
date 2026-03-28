@@ -1,0 +1,46 @@
+---
+import heroImage from '@assets/images/hero.jpg';
+
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<section class="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
+  <div class="absolute inset-0">
+    <img
+      src={heroImage.src}
+      alt=""
+      width={heroImage.width}
+      height={heroImage.height}
+      class="size-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 lg:px-8">
+    <h1
+      class="font-heading text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl"
+      style="animation: fade-in 0.8s ease both;"
+    >
+      {title}
+    </h1>
+    <p
+      class="mx-auto mt-6 max-w-2xl text-sm font-medium uppercase tracking-[0.25em] text-white/80 sm:text-base"
+      style="animation: fade-in 0.8s ease 0.3s both;"
+    >
+      {subtitle}
+    </p>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2" style="animation: fade-in 1s ease 0.8s both;">
+    <div class="flex flex-col items-center gap-2">
+      <div class="h-10 w-px bg-gradient-to-b from-transparent to-white/60"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+---
+interface TimelineItem {
+  readonly period: string;
+  readonly description: string;
+}
+
+interface Props {
+  title: string;
+  items: readonly TimelineItem[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<section class="py-20">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <h2 class="animate-on-scroll mb-16 text-center font-heading text-3xl font-bold text-(--text-primary) sm:text-4xl">
+      {title}
+    </h2>
+
+    <div class="relative">
+      <div class="absolute left-[19px] top-0 h-full w-px bg-gradient-to-b from-(--border-accent) via-(--border-color) to-transparent sm:left-1/2 sm:-ml-px"></div>
+
+      <div class="space-y-8">
+        {items.map((item, index) => (
+          <div class={`animate-on-scroll stagger-${Math.min(index % 3 + 1, 5)} relative flex flex-col gap-4 sm:flex-row ${index % 2 === 0 ? '' : 'sm:flex-row-reverse'}`}>
+            <div class={`flex-1 ${index % 2 === 0 ? 'sm:text-right sm:pr-12' : 'sm:text-left sm:pl-12'}`}>
+              <span class="inline-block rounded-full bg-(--bg-accent)/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-(--bg-accent)">
+                {item.period}
+              </span>
+              <p class="mt-2 text-sm leading-relaxed text-(--text-secondary)">
+                {item.description}
+              </p>
+            </div>
+            <div class="absolute left-[15px] top-1 z-10 flex items-center justify-center sm:left-1/2 sm:-ml-1.5">
+              <div class="size-3 rounded-full border-2 border-(--bg-accent) bg-(--bg-primary)"></div>
+            </div>
+            <div class="hidden flex-1 sm:block"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

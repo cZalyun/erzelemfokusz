@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ÉrzelemFókusz – Oldal nem található</title>
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        if (path !== '/' && path !== '/en' && path !== '/en/') {
+          window.location.replace('/');
+        }
+      })();
+    </script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100dvh;
+        margin: 0;
+        background: #faf8f5;
+        color: #3d1f2a;
+      }
+      .container {
+        text-align: center;
+        padding: 2rem;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        color: #7a5060;
+        margin-bottom: 1.5rem;
+      }
+      a {
+        display: inline-block;
+        background: #6b3548;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a:hover {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Az oldal nem található</h1>
+      <p>A keresett oldal nem létezik vagy áthelyezésre került.</p>
+      <a href="/">Vissza a főoldalra</a>
+    </div>
+  </body>
+</html>

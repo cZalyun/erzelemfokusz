@@ -1,0 +1,184 @@
+---
+import type { Locale } from '@config/site';
+import { getNavItems, getFilteredChildren, type NavItem } from '@config/navigation';
+import { useTranslations } from '@i18n/utils';
+import { FEATURES } from '@config/features';
+import ThemeToggle from './ThemeToggle.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { CONTACT } from '@config/site';
+import logoSrc from '@assets/images/logo.png';
+
+interface Props {
+  locale: Locale;
+  currentPath: string;
+}
+
+const { locale, currentPath } = Astro.props;
+const t = useTranslations(locale);
+const navItems = getNavItems(locale);
+
+function getLabel(item: NavItem): string {
+  const keys = item.labelKey.split('.') as [string, string];
+  const section = keys[0] as keyof typeof t;
+  const key = keys[1];
+  const group = t[section] as Record<string, string>;
+  return group[key] ?? item.labelKey;
+}
+---
+
+<header class="sticky top-0 z-50 border-b border-(--border-color) bg-(--bg-primary)/80 backdrop-blur-lg">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+    <a href={locale === 'hu' ? '/' : '/en'} class="flex items-center gap-3 transition-opacity hover:opacity-80">
+      <img src={logoSrc.src} alt="ÉrzelemFókusz" width="44" height="44" class="rounded-full" />
+      <span class="hidden font-heading text-lg font-semibold text-(--text-primary) sm:block">
+        ÉrzelemFókusz
+      </span>
+    </a>
+
+    <div class="hidden items-center gap-1 md:flex">
+      {navItems.map((item) => {
+        const children = getFilteredChildren(item);
+        if (children.length > 0) {
+          return (
+            <div class="group relative">
+              <button
+                type="button"
+                class="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-(--text-secondary) transition-colors hover:bg-(--bg-secondary) hover:text-(--text-primary) cursor-pointer"
+              >
+                {getLabel(item)}
+                <svg class="size-4 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div class="invisible absolute left-0 top-full z-50 min-w-[220px] rounded-xl border border-(--border-color) bg-(--bg-card) py-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                {children.map((child) => (
+                  <a
+                    href={child.href}
+                    class="block px-4 py-2.5 text-sm text-(--text-secondary) transition-colors hover:bg-(--bg-secondary) hover:text-(--text-primary)"
+                  >
+                    {getLabel(child)}
+                  </a>
+                ))}
+              </div>
+            </div>
+          );
+        }
+        return (
+          <a
+            href={item.href}
+            class:list={[
+              'rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-(--bg-secondary)',
+              currentPath === item.href
+                ? 'text-(--text-primary) bg-(--bg-secondary)'
+                : 'text-(--text-secondary) hover:text-(--text-primary)',
+            ]}
+          >
+            {getLabel(item)}
+          </a>
+        );
+      })}
+
+      <a
+        href={CONTACT.facebook}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="ml-1 rounded-lg p-2 text-(--text-muted) transition-colors hover:text-(--text-primary)"
+        aria-label="Facebook"
+      >
+        <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+        </svg>
+      </a>
+
+      <div class="ml-2 flex items-center gap-2">
+        {FEATURES.darkMode && <ThemeToggle locale={locale} />}
+        {FEATURES.i18n && <LanguageSwitcher locale={locale} currentPath={currentPath} />}
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="rounded-lg p-2 text-(--text-secondary) transition-colors hover:bg-(--bg-secondary) md:hidden cursor-pointer"
+      aria-label="Menu"
+      data-mobile-toggle
+    >
+      <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" data-hamburger-icon />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" class="hidden" data-close-icon />
+      </svg>
+    </button>
+  </nav>
+
+  <div class="hidden border-t border-(--border-color) bg-(--bg-primary) md:hidden" data-mobile-menu>
+    <div class="space-y-1 px-4 py-4">
+      {navItems.map((item) => {
+        const children = getFilteredChildren(item);
+        if (children.length > 0) {
+          return (
+            <>
+              <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-(--text-muted)">
+                {getLabel(item)}
+              </div>
+              {children.map((child) => (
+                <a
+                  href={child.href}
+                  class="block rounded-lg px-3 py-2 pl-6 text-sm text-(--text-secondary) transition-colors hover:bg-(--bg-secondary) hover:text-(--text-primary)"
+                >
+                  {getLabel(child)}
+                </a>
+              ))}
+            </>
+          );
+        }
+        return (
+          <a
+            href={item.href}
+            class:list={[
+              'block rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-(--bg-secondary)',
+              currentPath === item.href
+                ? 'text-(--text-primary) bg-(--bg-secondary)'
+                : 'text-(--text-secondary) hover:text-(--text-primary)',
+            ]}
+          >
+            {getLabel(item)}
+          </a>
+        );
+      })}
+      <div class="flex items-center gap-3 border-t border-(--border-color) px-3 pt-4">
+        <a
+          href={CONTACT.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-lg p-2 text-(--text-muted) transition-colors hover:text-(--text-primary)"
+          aria-label="Facebook"
+        >
+          <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          </svg>
+        </a>
+        {FEATURES.darkMode && <ThemeToggle locale={locale} />}
+        {FEATURES.i18n && <LanguageSwitcher locale={locale} currentPath={currentPath} />}
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  function initMobileMenu() {
+    const toggle = document.querySelector('[data-mobile-toggle]');
+    const menu = document.querySelector('[data-mobile-menu]');
+    const hamburger = document.querySelector('[data-hamburger-icon]');
+    const closeIcon = document.querySelector('[data-close-icon]');
+    if (!toggle || !menu || !hamburger || !closeIcon) return;
+
+    toggle.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      hamburger.classList.toggle('hidden', !isOpen);
+      closeIcon.classList.toggle('hidden', isOpen);
+    });
+  }
+
+  initMobileMenu();
+  document.addEventListener('astro:after-swap', initMobileMenu);
+</script>

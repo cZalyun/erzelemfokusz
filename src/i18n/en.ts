@@ -1,0 +1,250 @@
+import type { Translations } from './types';
+
+export const en: Translations = {
+  meta: {
+    siteTitle: 'EmotionFocus – Mental Health Services',
+    siteDescription:
+      'Emotion-focused, contextual mental health counseling and couples therapy – Edina Kőrösi, mental health professional',
+    ogTitle: 'EmotionFocus – Mental Health Counseling & Couples Therapy',
+    ogDescription:
+      'Personal growth, emotional blocks, relationship difficulties? Edina Kőrösi, mental health professional, offers support in Veszprém and Budapest.',
+  },
+  nav: {
+    home: 'Home',
+    about: 'About',
+    more: 'More',
+    safeBeginnings: 'Safe Beginnings',
+    consultation: 'Consultation',
+    efPastoralCare: 'EF Pastoral Care',
+    holdMeTight: 'Hold Me Tight!',
+    news: 'News',
+    groups: 'Groups',
+    contact: 'Contact',
+    pricing: 'Pricing',
+  },
+  theme: {
+    light: 'Light',
+    dark: 'Dark',
+    system: 'System',
+  },
+  home: {
+    title: 'EmotionFocus',
+    subtitle:
+      'EMOTION-FOCUSED, CONTEXTUAL MENTAL HEALTH COUNSELING AND COUPLES THERAPY',
+    emotionsTitle: 'Emotions, and what lies behind them!',
+    testimonials: [
+      'They show us what we fear.',
+      'They show us what we need.',
+      'When we are able to face our own emotional reality, we become capable of facing ourselves.',
+    ],
+    consultationTitle: 'Consultation',
+    consultationFocusTitle: 'WHAT IS THE CONSULTATION ABOUT?',
+    consultationFocusTags: [
+      'UNFOLDING EMOTIONS',
+      'RECOGNIZING EMOTIONS',
+      'SELF-AWARENESS',
+      'CHANGE',
+      'GROWTH',
+      'UNDERSTANDING',
+      'BREAKING FREE FROM BEING STUCK',
+      'LETTING GO',
+      'INTEGRATION',
+    ],
+    consultationCharTitle: 'WHAT CHARACTERIZES THE CONSULTATION?',
+    consultationCharTags: [
+      'PERSON-CENTERED',
+      'ALLIANCE',
+      'PARTNERSHIP',
+      'EMOTIONAL FOCUS',
+      'EMPOWERMENT',
+      'FOSTERS INDEPENDENCE',
+      'FOR YOU',
+      'BESIDE YOU',
+    ],
+    specializationsTitle: 'MY SPECIALIZATIONS:',
+    specializations: [
+      'Individual supportive conversations, self-awareness guidance',
+      'Hold Me Tight! – 1+7 session Emotion-Focused course for couples. A relationship-strengthening program based on the attachment model of close relationships',
+      'Managing communication difficulties',
+      'Forgiveness and trust restoration',
+      'Sexual problems and lack of intimacy',
+      'Divorce dilemmas and processing separation',
+      'Family conflicts and parenting challenges',
+      'Low self-confidence and self-awareness issues',
+      'The impact of stress and burnout on relationships',
+      'Adapting to new life stages',
+    ],
+    contactTitle: 'Contact',
+    contactFormName: 'Name',
+    contactFormEmail: 'Email',
+    contactFormPhone: 'Phone',
+    contactFormLocation: 'Location',
+    contactFormLocationPlaceholder: 'Choose a location',
+    contactFormLocationOptions: ['Veszprém', 'Budapest', 'Online'],
+    contactFormMessage: 'Message',
+    contactFormSend: 'Send',
+    contactFormSuccess: 'Message sent successfully.',
+    quote:
+      'The essence of true connection is the experience of "I feel that you feel."',
+    quoteAuthor: 'Sue Johnson',
+  },
+  about: {
+    pageTitle: 'About Me',
+    name: 'Edina Kőrösi',
+    subtitle: 'mental health professional, self-awareness trainer, and couples coach',
+    introHeading: 'Relationship difficulties, emotional blocks?\nPersonal growth – step by step, in a safe environment',
+    introText: [
+      'For me, self-awareness and relational work is about getting closer to who we truly are. To what we feel, what we carry, and how we want to connect – to ourselves and to others. I believe that the foundation of change is safe, honest connection. We get hurt in relationships, and we can heal through relationships as well.',
+      'In a helping process, trust, discretion, and genuine presence are therefore of paramount importance.',
+      'Since 2019, I have been accompanying individuals and couples on their journey of self-discovery. I work with an emotion-focused, attachment-based, and contextual approach to gain insight into internal patterns, schemas, and relational dynamics, and how these shape our everyday decisions and relationships.',
+      'By mutual agreement, I also work with psychodramatic tools and systemic constellation to gain deeper insight into blocks and possibilities for change.',
+      'I warmly welcome you for an initial conversation – whether you seek support individually or as a couple. The purpose of the first session is to see together what best serves your progress.',
+    ],
+    contactText: 'Contact:',
+    insightsTitle: 'Through my personal experience and work, I have come to realize:',
+    insights: [
+      'that it is not worth fighting against our emotions, but rather it is essential to experience them, allow them, and understand their message, whether it relates to us or our relationships',
+      'that recognizing and understanding our deeper emotions is the key to successfully changing harmful relational patterns and functioning at a higher level of consciousness',
+      'that a sense of safety is one of the most important elements of harmoniously functioning relationships',
+      'that a person is capable of stepping out of their ingrained conditioning and, through change, perceiving existence from a broader perspective – becoming able to see what is, not just what they were taught to see',
+    ],
+    roleTitle: 'As a Mental Health Counselor',
+    rolePoints: [
+      'I am your companion in the alliance between us; I work with you in partnership, but this also requires your active participation',
+      'We work together in the HERE and NOW, along the present feelings you bring, what is within you, regardless of how recent or past your story is',
+      'Focusing on your emotions, we seek together a way out or answers to your questions, and if you feel that you "no longer feel," then we continue along this path',
+      'I am beside you when you feel your own strength is not enough to step out of the situation, feeling, or thought-world you have identified with and which is the source of your suffering',
+    ],
+    timelineTitle: 'PROFESSIONAL JOURNEY',
+    timeline: [
+      { period: '2022-2024', description: 'SEMMELWEIS UNIVERSITY – Mental Health Couples and Family Counselor qualification (3/SE-EKK-MIMHCL/2024)' },
+      { period: '2021-2024', description: 'Hungarian Psychodrama Association / Psychodrama Assistant' },
+      { period: '2020', description: 'Hold Me Tight program group leader training (B-2020/006743)' },
+      { period: '2019-2021', description: 'Creative Tools in Pastoral Care (Moreno Institute)' },
+      { period: '2019-20', description: 'Spiritual Soul Guidance Synthesis Association, Loss and Grief Processing Program (S-L.33/2019-2020)' },
+      { period: 'Since 2018', description: 'Ongoing Supervision (individual & group)' },
+      { period: '2018', description: 'Emotionally Focused Couples Therapy basic training (ICEEFT-19)' },
+      { period: '2017-19', description: 'SOTE – Mental Health Counselor (14/SE-EKK-MIML/2019)' },
+      { period: '2017-18', description: 'Vedic Self-awareness' },
+      { period: '2016-17', description: 'Somatodrama (Dr. László Buda)' },
+      { period: '2013-15', description: 'Self-awareness Psychodrama (Ferenc Pál)' },
+      { period: '2011', description: 'Grief and Loss Processing (Szeged – Dr. Emőke Sarungi)' },
+      { period: '2008-09', description: 'Swimming Coach – Fitness Academy' },
+      { period: '1991-96', description: 'Veszprém Theological College' },
+    ],
+    closingQuote: '"THE BIRD DOES NOT SING BECAUSE IT HAS SOMETHING TO SAY. IT SINGS BECAUSE IT HAS A SONG."',
+    closingQuoteAuthor: 'Anthony de Mello',
+  },
+  safeBeginnings: {
+    pageTitle: 'Safe Beginnings',
+    content:
+      'Dear couple expecting or planning your first child! The period surrounding the birth of the first child can be called a life-changing time when you experience new things together that you have never experienced before. Your love and relationship expand with a new member as the fruit of your unity. Your life changes fundamentally. You can prepare for this change through conscious preparation, attunement, and strengthening your relationship. Come to a half-day weekend workshop if you are planning your first child or a new life is already on its way to you. You can also choose the program in a shorter, two-session block with your partner. Experience the emotional closeness and alliance that creates a strong foundation for a lasting relationship. Prevent initial difficulties from causing stagnation – the "1+1=3 project" strengthens you to step prepared into new roles and joyful challenges! Continuously starting groups. Pre-registration required!',
+    contactEmail: 'ckedina75@gmail.com',
+    contactPhone: '06-30-872-4413',
+  },
+  efPastoralCare: {
+    pageTitle: 'Emotion-Focused Pastoral Care',
+    intro:
+      'Whether you participate in an individual or couples counseling process, emotions are always at the center of the work. During the exploration of your story or the dynamics between you, I help as an outside observer and supportive presence in recognizing and understanding emotions. I accompany you as long as my human and professional support is needed. If you feel that you can access your inner resources and want to move forward independently from a block or life crisis, the following techniques can help. They can contribute to developing emotional self-awareness and emotional regulation, not just overcoming difficulties.',
+    methodsIntro: 'There are many ways to focus on emotions, here are some possibilities:',
+    methods: [
+      {
+        title: 'Mindful Presence',
+        description: 'Mindful presence is a technique aimed at consciously paying attention to the present moment and accepting our emotions and thoughts without trying to change or avoid them. Practicing mindful presence can help us focus on our emotions and understand what causes them.',
+      },
+      {
+        title: 'Emotional Journaling',
+        description: 'Writing an emotional journal can help us focus on our emotions and understand what factors cause them. While writing an emotional journal, we can note our emotions throughout the day and record the circumstances or situations that triggered them.',
+      },
+      {
+        title: 'Meditation',
+        description: 'Meditation can help develop emotional self-awareness, emotional regulation, and finding emotional balance. During meditation, we focus on breathing and the emerging emotions, trying to accept and understand them, and enter a state of allowing.',
+      },
+      {
+        title: 'Using Symbols',
+        description: 'Another way to focus on emotions can be the use of symbols. For example, if someone is angry or frustrated, they can imagine sailing on a stormy sea or a windstorm raging around them. They express their inner emotions through images. The symbol can help understand and accept the legitimacy and naturalness of emotions and can lighten their burden.',
+      },
+    ],
+  },
+  holdMeTight: {
+    pageTitle: 'Hold Me Tight!',
+    subtitle: '1 + 7 session course',
+    heroQuote: 'Is it possible to feel good in our relationship? Dear Couples! "Hold Me Tight!" – 1+7 session course',
+    quoteText: 'Love is no longer a mystery, we can understand it, get to know it, and most importantly, shape it! Safe, loving, and lasting love is not impossible at all – now we have a map for it!',
+    quoteAuthor: 'Susanne Johnson',
+    mainText:
+      'The program is primarily not aimed at "therapy" for relationships in crisis, but offers a new perspective for couples navigating everyday conflicts and fatigue in their relationship. It offers new ways to resolve long-standing arguments and conflicts. In this sense, participation in the program is preventive rather than therapeutic. The main goal is to step out from behind our walls, learn to look at each other with interested attention, and recognize how much respect and love for each other often hides under so much "clutter." Emotional responsiveness is the key to lifelong love. The program based on this new approach was able to improve the relationship of seven out of ten couples struggling with difficulties.',
+    helpTitle: 'How I can help:',
+    helpItems: [
+      'with my professional knowledge, practical experience, and presence, creating an atmosphere where the deepest doubts, needs, fears, hopes, and desires can be expressed',
+      'offering new solutions for long-standing relationship conflicts',
+      'emotional map to ourselves and each other',
+      'developing emotional responsiveness',
+      '8-session relationship strengthening program',
+    ],
+    highlights: ['Emotional Closeness', 'Spiritual Intimacy', 'Conscious Connection'],
+    priceText: 'for couples, 2 hours: 25,000 HUF / session',
+    scheduleText: 'Meetings every 2 weeks, each session is 2 hours long',
+    ctaText: 'I\'m Interested',
+  },
+  newsPage: {
+    pageTitle: 'News & Location',
+    scheduleIntro: 'Schedule an appointment through any of my contacts:',
+    phone: '06-30-872-4413',
+    email: 'erzelemfokusz@gmail.com',
+    locations: [
+      { city: 'Veszprém', address: 'Stadion u. 1.', days: 'Monday, Tuesday, Wednesday' },
+      { city: 'Budapest', address: 'Mester Mentál Tér, Mester u. 83.', days: 'Friday, Saturday' },
+    ],
+  },
+  groupsPage: {
+    pageTitle: 'Groups',
+    safeBeginningsText:
+      'Dear couple expecting or planning your first child! The period surrounding the birth of the first child can be called a life-changing time when you experience new things together that you have never experienced before. Your love and relationship expand with a new member as the fruit of your unity. Your life changes fundamentally. You can prepare for this change through conscious preparation, attunement, and strengthening your relationship. Come to a half-day weekend workshop if you are planning your first child or a new life is already on its way to you. You can also choose the program in a shorter, two-session block with your partner. Experience the emotional closeness and alliance that creates a strong foundation for a lasting relationship. Prevent initial difficulties from causing stagnation – the "1+1=3 project" strengthens you to step prepared into new roles and joyful challenges! Continuously starting groups. Pre-registration required! For more sessions, inquire by email: ckedina75@gmail.com or 06-30-872-4413',
+    filmClubTitle: 'FILM CLUB',
+    filmClubText:
+      'If you enjoy watching movies and would also like to share with others how it affected you, which character you could identify with, who was the least appealing to you, etc... even more exciting questions await us. If you are also open and curious about others\' perspectives, then we welcome you to our film club. The films can be found and watched on YouTube.',
+    filmClubEvents: [
+      'October 8, 2022, 4:00 PM – The Intouchables',
+      'December 30, 2022, 4:00 PM – Everyday Paradise',
+    ],
+    filmClubLocation: 'Location: Veszprém',
+    thematicGroupTitle: 'Starting in May 2022,',
+    thematicGroupSubtitle: 'our thematic self-awareness topic:',
+    thematicGroupIntro: 'The 7 Archetypes of Woman',
+    thematicGroupDescription:
+      'According to the traditional view, the "normal" woman is one who conforms to the "average" – that is, a model, a set of roles that society currently expects from women. However, we all know that there are enormous differences between women. What is vital for one woman may have little or no significance for another.\n\n"Goddesses still live in every woman" – stated Dr. Jean Shinoda Bolen, psychiatrist, Jungian analyst, professor at the San Francisco Psychiatric Clinic. In the archetypal personality theory she created, she called upon the goddess figures of ancient Greek mythology to portray the universal feminine characters living within us. By learning about the archetypes described by Bolen, we can get closer to understanding our own feminine qualities and the unconscious motivations at work within us, and we can examine our relationships with men, other women, our parents, our children, and our work from a new perspective.',
+    thematicGroupTopics: [
+      'Understanding love and attachment: Our connection and relational needs',
+      'Life cycle transitions in our lives: Crisis – Change – Growth',
+      'The impact of self-esteem on our relationships',
+      'In balance with myself in the world of polarities',
+      'Protecting my boundaries: When no means Yes',
+      'As within, so without: Inner strength',
+    ],
+    thematicGroupMethod:
+      'After the theoretical introduction, we are present in a practical, interactive manner, focusing on our emotions. We also work with psychodramatic tools, so each session is a good opportunity to strengthen our self-confidence. We communicate with I-messages, from our own feelings, experiences, and impressions, and share our experiences related to the topic. We are not looking for truth, but for connection with each other through communication, thereby broadening our own perspective and strengthening our sensitivity, understanding, and acceptance towards others.',
+    thematicGroupSchedule:
+      'Each session is 3 hours long, we meet every two weeks on Thursdays from 5:30 PM to 8:30 PM. 5,000 HUF/session',
+    thematicGroupNote:
+      'We cannot accept applications from persons currently in psychotherapy process, it is considered a contraindication.',
+  },
+  pricingPage: {
+    pageTitle: 'Pricing & Terms',
+    individualTitle: 'For individual sessions:',
+    individualPrice: '15,000 HUF / session',
+    individualDuration: 'Session length: 60-70 minutes',
+    couplesTitle: 'For couples:',
+    couplesPrice: '25,000 HUF / session',
+    couplesDuration: 'Session length: 80-90 minutes',
+    description:
+      'As a systemic mental health professional, couples and family counselor, and EFT consultant, I accept adult, mentally healthy clients online or in person in Veszprém and Budapest, who turn to me with their life-situation difficulties.',
+    cancellationPolicy:
+      'Free cancellation of scheduled appointments is possible up to 24 hours before the session. This applies to me as well – if for some reason I am forced to cancel our session within 24 hours, you will not have to pay for the next session.',
+    disclaimer:
+      'My service is not a medical healing activity. Everything discussed in sessions is treated with confidentiality; discretion is primary from registration through to after closure.',
+  },
+  footer: {
+    rights: 'All rights reserved',
+  },
+} as const;

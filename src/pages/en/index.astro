@@ -1,0 +1,61 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/Hero.astro';
+import TestimonialCarousel from '@components/TestimonialCarousel.astro';
+import ConsultationSection from '@components/ConsultationSection.astro';
+import ContactSection from '@components/ContactSection.astro';
+import QuoteSection from '@components/QuoteSection.astro';
+import { useTranslations } from '@i18n/utils';
+import { FEATURES } from '@config/features';
+
+const t = useTranslations('en');
+---
+
+<Layout
+  title={t.meta.siteTitle}
+  description={t.meta.siteDescription}
+  ogTitle={t.meta.ogTitle}
+  ogDescription={t.meta.ogDescription}
+  locale="en"
+  canonicalPath="/en"
+>
+  <Hero title={t.home.title} subtitle={t.home.subtitle} />
+
+  {FEATURES.testimonialCarousel && (
+    <TestimonialCarousel
+      sectionTitle={t.home.emotionsTitle}
+      testimonials={t.home.testimonials}
+    />
+  )}
+
+  <ConsultationSection
+    title={t.home.consultationTitle}
+    focusTitle={t.home.consultationFocusTitle}
+    focusTags={t.home.consultationFocusTags}
+    charTitle={t.home.consultationCharTitle}
+    charTags={t.home.consultationCharTags}
+    specializationsTitle={t.home.specializationsTitle}
+    specializations={t.home.specializations}
+    sectionId="consultation"
+  />
+
+  {FEATURES.contactForm && (
+    <ContactSection
+      title={t.home.contactTitle}
+      formLabels={{
+        name: t.home.contactFormName,
+        email: t.home.contactFormEmail,
+        phone: t.home.contactFormPhone,
+        location: t.home.contactFormLocation,
+        locationPlaceholder: t.home.contactFormLocationPlaceholder,
+        locationOptions: t.home.contactFormLocationOptions,
+        message: t.home.contactFormMessage,
+        send: t.home.contactFormSend,
+        success: t.home.contactFormSuccess,
+      }}
+      sectionId="contact"
+    />
+  )}
+
+  <QuoteSection quote={t.home.quote} author={t.home.quoteAuthor} />
+</Layout>

@@ -1,0 +1,90 @@
+---
+import { SITE_URL, CONTACT } from '@config/site';
+import type { Locale } from '@config/site';
+import { getAlternateLocaleHref } from '@config/navigation';
+
+interface Props {
+  title: string;
+  description: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  canonicalPath: string;
+  locale: Locale;
+}
+
+const {
+  title,
+  description,
+  ogTitle,
+  ogDescription,
+  ogImage = '/og-image.png',
+  canonicalPath,
+  locale,
+} = Astro.props;
+
+const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
+const huHref = `${SITE_URL}${getAlternateLocaleHref(canonicalPath, 'hu')}`;
+const enHref = `${SITE_URL}${getAlternateLocaleHref(canonicalPath, 'en')}`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'ÉrzelemFókusz',
+  description: description,
+  url: SITE_URL,
+  telephone: CONTACT.phone,
+  email: CONTACT.email,
+  founder: {
+    '@type': 'Person',
+    name: CONTACT.name,
+    jobTitle: 'Mentálhigiénés szakember',
+  },
+  address: [
+    {
+      '@type': 'PostalAddress',
+      addressLocality: 'Veszprém',
+      streetAddress: 'Stadion u. 1.',
+      addressCountry: 'HU',
+    },
+    {
+      '@type': 'PostalAddress',
+      addressLocality: 'Budapest',
+      streetAddress: 'Mester u. 83.',
+      addressCountry: 'HU',
+    },
+  ],
+  sameAs: [CONTACT.facebook],
+};
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+<link rel="icon" type="image/png" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/og-image.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={ogTitle ?? title} />
+<meta property="og:description" content={ogDescription ?? description} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:locale" content={locale === 'hu' ? 'hu_HU' : 'en_US'} />
+<meta property="og:site_name" content="ÉrzelemFókusz" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={ogTitle ?? title} />
+<meta name="twitter:description" content={ogDescription ?? description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<link rel="alternate" hreflang="hu" href={huHref} />
+<link rel="alternate" hreflang="en" href={enHref} />
+<link rel="alternate" hreflang="x-default" href={huHref} />
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

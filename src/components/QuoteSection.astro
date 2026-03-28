@@ -1,0 +1,25 @@
+---
+interface Props {
+  quote: string;
+  author: string;
+}
+
+const { quote, author } = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-(--bg-accent) py-16">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute -left-20 -top-20 size-80 rounded-full bg-white/20"></div>
+    <div class="absolute -bottom-20 -right-20 size-60 rounded-full bg-white/10"></div>
+  </div>
+  <div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+    <blockquote>
+      <p class="animate-on-scroll font-heading text-2xl font-medium italic leading-relaxed text-(--text-on-accent) sm:text-3xl lg:text-4xl">
+        {quote}
+      </p>
+      <footer class="animate-on-scroll stagger-2 mt-6 text-base font-medium text-(--text-on-accent)/70">
+        — {author}
+      </footer>
+    </blockquote>
+  </div>
+</section>
