@@ -11,6 +11,9 @@ interface Props {
     location: string;
     locationPlaceholder: string;
     locationOptions: readonly string[];
+    services: string;
+    servicesPlaceholder: string;
+    servicesOptions: readonly string[];
     message: string;
     send: string;
     success: string;
@@ -110,6 +113,19 @@ const { title, formLabels, sectionId } = Astro.props;
           >
             <option value="">{formLabels.locationPlaceholder}</option>
             {formLabels.locationOptions.map((opt) => (
+              <option value={opt}>{opt}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label for="contact-services" class="mb-1.5 block text-sm font-medium text-(--text-secondary)">{formLabels.services}</label>
+          <select
+            id="contact-services"
+            name="services"
+            class="w-full rounded-xl border border-(--border-color) bg-(--bg-card) px-4 py-3 text-sm text-(--text-primary) outline-none transition-colors focus:border-(--border-accent) focus:ring-2 focus:ring-(--border-accent)/20"
+          >
+            <option value="">{formLabels.servicesPlaceholder}</option>
+            {formLabels.servicesOptions.map((opt) => (
               <option value={opt}>{opt}</option>
             ))}
           </select>

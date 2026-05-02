@@ -16,26 +16,31 @@ const t = useTranslations('hu');
 
   <section class="py-16">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <p class="animate-on-scroll text-base leading-relaxed text-(--text-secondary)">
-        {t.efPastoralCare.intro}
-      </p>
+      <h2 class="animate-on-scroll font-heading text-3xl font-bold text-(--text-primary) sm:text-4xl">
+        {t.efPastoralCare.recommendTitle}
+      </h2>
 
-      <p class="animate-on-scroll stagger-1 mt-8 font-heading text-lg font-semibold text-(--text-primary)">
-        {t.efPastoralCare.methodsIntro}
-      </p>
-
-      <div class="mt-8 space-y-6">
-        {t.efPastoralCare.methods.map((method, i) => (
-          <div class={`animate-on-scroll stagger-${Math.min(i + 1, 5)} rounded-2xl border border-(--border-color) bg-(--bg-card) p-6 transition-shadow hover:shadow-md sm:p-8`}>
-            <h3 class="mb-3 font-heading text-xl font-semibold text-(--text-primary)">
-              {method.title}
-            </h3>
-            <p class="text-sm leading-relaxed text-(--text-secondary)">
-              {method.description}
-            </p>
-          </div>
-        ))}
+      <div class="animate-on-scroll stagger-1 mt-8 rounded-2xl border border-(--border-color) bg-(--bg-card) p-6 shadow-sm sm:p-8">
+        <h3 class="font-heading text-xl font-semibold text-(--text-primary)">
+          {t.efPastoralCare.whyTitle}
+        </h3>
+        <p class="mt-4 text-base leading-relaxed text-(--text-secondary)">
+          {t.efPastoralCare.whyText}
+        </p>
       </div>
+
+      <p class="animate-on-scroll stagger-2 mt-10 font-heading text-lg font-semibold text-(--text-primary)">
+        {t.efPastoralCare.whenIntro}
+      </p>
+
+      <ul class="animate-on-scroll stagger-3 mt-6 space-y-4">
+        {t.efPastoralCare.whenItems.map((item) => (
+          <li class="flex gap-4 rounded-xl border border-(--border-color) bg-(--bg-card) p-5">
+            <span class="mt-2 inline-block size-2 flex-shrink-0 rounded-full bg-(--bg-accent)"></span>
+            <span class="text-base leading-relaxed text-(--text-secondary)">{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 </Layout>

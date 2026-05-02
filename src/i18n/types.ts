@@ -42,6 +42,9 @@ export interface Translations {
     readonly contactFormLocation: string;
     readonly contactFormLocationPlaceholder: string;
     readonly contactFormLocationOptions: readonly string[];
+    readonly contactFormServices: string;
+    readonly contactFormServicesPlaceholder: string;
+    readonly contactFormServicesOptions: readonly string[];
     readonly contactFormMessage: string;
     readonly contactFormSend: string;
     readonly contactFormSuccess: string;
@@ -52,13 +55,8 @@ export interface Translations {
     readonly pageTitle: string;
     readonly name: string;
     readonly subtitle: string;
-    readonly introHeading: string;
     readonly introText: readonly string[];
     readonly contactText: string;
-    readonly insightsTitle: string;
-    readonly insights: readonly string[];
-    readonly roleTitle: string;
-    readonly rolePoints: readonly string[];
     readonly timelineTitle: string;
     readonly timeline: readonly {
       readonly period: string;
@@ -75,12 +73,11 @@ export interface Translations {
   };
   readonly efPastoralCare: {
     readonly pageTitle: string;
-    readonly intro: string;
-    readonly methodsIntro: string;
-    readonly methods: readonly {
-      readonly title: string;
-      readonly description: string;
-    }[];
+    readonly recommendTitle: string;
+    readonly whyTitle: string;
+    readonly whyText: string;
+    readonly whenIntro: string;
+    readonly whenItems: readonly string[];
   };
   readonly holdMeTight: {
     readonly pageTitle: string;
@@ -109,19 +106,12 @@ export interface Translations {
   };
   readonly groupsPage: {
     readonly pageTitle: string;
-    readonly safeBeginningsText: string;
-    readonly filmClubTitle: string;
-    readonly filmClubText: string;
-    readonly filmClubEvents: readonly string[];
-    readonly filmClubLocation: string;
-    readonly thematicGroupTitle: string;
-    readonly thematicGroupSubtitle: string;
-    readonly thematicGroupIntro: string;
-    readonly thematicGroupDescription: string;
-    readonly thematicGroupTopics: readonly string[];
-    readonly thematicGroupMethod: string;
-    readonly thematicGroupSchedule: string;
-    readonly thematicGroupNote: string;
+    readonly listIntro: string;
+    readonly groups: readonly string[];
+    readonly joinInfo: string;
+    readonly contactLabel: string;
+    readonly contactEmail: string;
+    readonly contactPhone: string;
   };
   readonly pricingPage: {
     readonly pageTitle: string;

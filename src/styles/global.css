@@ -35,7 +35,7 @@
   --text-primary: var(--color-brand-900);
   --text-secondary: var(--color-brand-700);
   --text-muted: var(--color-brand-400);
-  --text-on-accent: var(--color-cream-50);
+  --text-on-accent: #ffffff;
 
   --border-color: var(--color-cream-300);
   --border-accent: var(--color-brand-300);
@@ -54,7 +54,7 @@
   --text-primary: var(--color-cream-100);
   --text-secondary: var(--color-cream-200);
   --text-muted: var(--color-brand-300);
-  --text-on-accent: var(--color-cream-50);
+  --text-on-accent: #ffffff;
 
   --border-color: oklch(0.30 0.03 15);
   --border-accent: var(--color-brand-500);

@@ -19,12 +19,7 @@ const t = useTranslations('en');
 
   <section class="py-16">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <div class="animate-on-scroll mb-12">
-        <p class="whitespace-pre-line font-heading text-xl font-semibold italic leading-relaxed text-(--text-primary)">
-          {t.about.introHeading}
-        </p>
-      </div>
-      <div class="animate-on-scroll stagger-1 space-y-6">
+      <div class="animate-on-scroll space-y-6">
         {t.about.introText.map((paragraph) => (
           <p class="text-base leading-relaxed text-(--text-secondary)">{paragraph}</p>
         ))}
@@ -35,42 +30,6 @@ const t = useTranslations('en');
           <a href={`mailto:${CONTACT.email}`} class="block text-(--text-secondary) hover:text-(--text-primary) transition-colors">{CONTACT.email}</a>
           <a href={`tel:${CONTACT.phone}`} class="block text-(--text-secondary) hover:text-(--text-primary) transition-colors">06-30-872-4413</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-(--bg-secondary) py-16">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <h2 class="animate-on-scroll mb-10 font-heading text-2xl font-bold text-(--text-primary) sm:text-3xl">
-        {t.about.insightsTitle}
-      </h2>
-      <div class="space-y-6">
-        {t.about.insights.map((insight, i) => (
-          <div class={`animate-on-scroll stagger-${Math.min(i + 1, 5)} flex gap-4 rounded-xl border border-(--border-color) bg-(--bg-card) p-5`}>
-            <div class="mt-1 flex-shrink-0">
-              <div class="size-2.5 rounded-full bg-(--bg-accent)"></div>
-            </div>
-            <p class="text-base leading-relaxed text-(--text-secondary)">{insight}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <h2 class="animate-on-scroll mb-10 font-heading text-2xl font-bold text-(--text-primary) sm:text-3xl">
-        {t.about.roleTitle}
-      </h2>
-      <div class="space-y-6">
-        {t.about.rolePoints.map((point, i) => (
-          <div class={`animate-on-scroll stagger-${Math.min(i + 1, 5)} flex gap-4 rounded-xl border border-(--border-color) bg-(--bg-card) p-5`}>
-            <div class="mt-1 flex-shrink-0">
-              <div class="size-2.5 rounded-full bg-(--color-gold-500)"></div>
-            </div>
-            <p class="text-base leading-relaxed text-(--text-secondary)">{point}</p>
-          </div>
-        ))}
       </div>
     </div>
   </section>
