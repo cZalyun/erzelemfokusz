@@ -110,7 +110,7 @@ Pushes to `main` automatically deploy via GitHub Actions (`.github/workflows/dep
 
 The workflow uses `withastro/action@v3` to build and `actions/deploy-pages@v4` to publish.
 
-**Custom domain:** Set DNS for `erzelemfokusz.peterbenceczaun.me` to point to GitHub Pages, and enable Pages in the repository settings.
+**Custom domain:** `erzelemfokusz.com` (apex) — configured via `public/CNAME`. Configure DNS at your registrar with GitHub Pages apex `A`/`AAAA` records, plus a `CNAME` for the `www` subdomain pointing to `czalyun.github.io`. Enable **Enforce HTTPS** in the repository's Pages settings once the cert is provisioned.
 
 ## License
 

@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://erzelemfokusz.peterbenceczaun.me',
+  site: 'https://erzelemfokusz.com',
   output: 'static',
   i18n: {
     locales: ['hu', 'en'],

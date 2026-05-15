@@ -1,4 +1,4 @@
-export const SITE_DOMAIN = 'erzelemfokusz.peterbenceczaun.me' as const;
+export const SITE_DOMAIN = 'erzelemfokusz.com' as const;
 export const SITE_URL = `https://${SITE_DOMAIN}` as const;
 
 export type Locale = (typeof LOCALES)[number];
