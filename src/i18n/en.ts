@@ -29,8 +29,10 @@ export const en: Translations = {
   },
   home: {
     title: 'EmotionFocus',
-    subtitle:
-      'Emotion-focused mental health counseling for individual life situations and relationship difficulties\nRelationship difficulties, emotional blocks?\nPersonal growth – step by step, in a safe environment',
+    subtitleHeadline:
+      'EMOTIONAL SUPPORT AND MENTAL HEALTH GUIDANCE FOR INDIVIDUAL LIFE SITUATIONS AND RELATIONSHIP DIFFICULTIES',
+    subtitleTagline:
+      'Relationship difficulties, emotional blocks?\nPersonal growth – step by step, in a safe space',
     emotionsTitle: 'Emotions, and what lies behind them!',
     testimonials: [
       'They show us what we fear.',
@@ -101,13 +103,29 @@ export const en: Translations = {
     name: 'Edina Kőrösi',
     subtitle: 'mental health professional, self-awareness trainer, and couples coach',
     introText: [
-      'Since 2019, I have been accompanying those who turn to me as a mental health professional, couples coach, and self-awareness trainer. In addition, I teach swimming to adults with a mental health perspective and support the development of water safety – this is where my holistic approach comes in as well.',
-      'For me, the foundation of helping work is connection. A safe, accepting presence, where a genuine, supportive-quality encounter can take place. I believe that every change and growth can be born out of this connection.',
-      'My helping work and my experiences in the water teach the same thing: the power of trust, presence, and gradualness, while respecting one\'s own pace. This can manifest in a quiet inner realization, or in a practical moment when tension is slowly replaced by trust and a sense of safety.',
-      'One of the most important parts of our shared work for me is accompanying the process of change. When someone gets closer and closer to themselves – not just struggling, but beginning to be present within themselves, and experiencing their own stability and inner strength.',
-      'Systemic, emotion-focused couples work is especially close to my heart. I believe that a safe space can also emerge in relationships, where understanding, clarification, and realignment can happen – and where a new quality of connection can be born.',
-      'By mutual agreement, I also work with psychodramatic tools and systemic constellation to gain deeper insight into blocks and possibilities for change.',
-      'I warmly welcome you for an initial conversation – whether you seek support individually or as a couple. The purpose of the first session is to see together what best serves your progress.',
+      {
+        text: 'Since 2019, I have been accompanying — within a mental health framework — those who turn to me with everyday life difficulties, inner blocks, or relationship questions. My work involves both individual and couples consultation processes, where the focus is on understanding, self-reflection, and recognizing relational patterns.',
+      },
+      {
+        text: 'I earned my mental health professional qualification at Semmelweis University, and afterwards deepened my expertise through relationship-focused and systemic training programs.',
+        bold: true,
+      },
+      {
+        text: 'For me, the foundation of helping work is connection: a safe, accepting presence where a genuine encounter can take place. I believe that change is not born from external advice, but from this connection and from the inner process of settling.',
+      },
+      {
+        text: 'Systemically grounded, emotion-focused couples work is especially close to me. The goal of the shared process is for each partner to better understand their own functioning and one another, so that a more transparent, more livable relational space can emerge.',
+      },
+      {
+        text: 'In my work — by mutual agreement — I also use psychodramatic and systemic tools that help us understand situations more deeply and allow inner processes to settle.',
+      },
+      {
+        text: 'My approach is defined by presence, gradualness, and respect for each person\'s own rhythm — whether the work is individual or about a relationship.',
+      },
+      {
+        text: 'I warmly welcome you for a first conversation, where we can look together at what the next, most supportive step could be for you.',
+        bold: true,
+      },
     ],
     contactText: 'Contact:',
     timelineTitle: 'PROFESSIONAL JOURNEY',
@@ -186,26 +204,64 @@ export const en: Translations = {
   },
   groupsPage: {
     pageTitle: 'Groups',
-    listIntro: 'Our groups:',
-    groups: [
-      'Self-awareness',
-      'Faith & Spiritual',
-      'Hold Me Tight thematic course / 4-day retreats for couples (in Greece)',
-      'Leisure (hiking, sightseeing, cycling, bathing)',
+    categories: [
+      {
+        title: 'Self-awareness group',
+        description:
+          'Small-group processes for a deeper understanding of self-awareness, inner patterns, and relational dynamics — with an emotion-focused approach.',
+      },
+      {
+        title: 'Inner world & life-questions group',
+        description:
+          'A conversation circle where the focus is on understanding personal experiences, life situations, and inner processes. The aim is to support clarity, settling, and self-reflection.',
+      },
+      {
+        title: '"Hold Me Tight!" – thematic couples programs and retreats',
+        description:
+          'Intensive processes for couples, where relational functioning, emotional connection, and communication are at the center — in a calm, supportive environment.',
+      },
+      {
+        title: 'For helping professionals – professional discussion circle / supervision-style group',
+        description:
+          'A small-group professional space for people doing helping work. The aim is professional self-reflection, prevention of burnout, and processing situations experienced in the helper role.',
+      },
+      {
+        title: 'Leisure and community programs',
+        description:
+          'Shared experiential programs: hiking, sightseeing, cycling, water-based activities — in the spirit of connection and recharging.',
+      },
     ],
-    joinInfo: 'with ongoing opportunities to join',
+    joinInfo: {
+      title: 'With ongoing opportunities to join',
+      description:
+        'Certain groups operate as open systems, so it is possible to join at any time.',
+    },
     contactLabel: 'inquiries:',
     contactEmail: 'erzelemfokusz@gmail.com',
     contactPhone: '06-30-872-4413',
   },
   pricingPage: {
     pageTitle: 'Pricing & Terms',
-    individualTitle: 'For individual sessions:',
-    individualPrice: '15,000 HUF / session',
-    individualDuration: 'Session length: 60-70 minutes',
-    couplesTitle: 'For couples:',
-    couplesPrice: '25,000 HUF / session',
-    couplesDuration: 'Session length: 90-120 minutes (first session 20,000 HUF)',
+    services: [
+      {
+        id: 'individual',
+        title: 'Individual consultation',
+        duration: 'Duration: 60–90 minutes',
+        locationsLabel: 'Location: Budapest / Veszprém / online',
+        description:
+          'In individual conversations we work with life-situation blocks, inner tensions, decision-making difficulties, and relational patterns.',
+        feeLabel: 'Fee:',
+      },
+      {
+        id: 'couples',
+        title: 'Couples consultation / Hold Me Tight! 1+7 session course',
+        duration: 'Duration: 90–120 minutes',
+        locationsLabel: 'Location: Budapest / Veszprém / online',
+        description:
+          'The goal of couples consultations is to understand how the relationship functions, to clarify communication difficulties, and to uncover the patterns behind conflicts.',
+        feeLabel: 'Fee:',
+      },
+    ],
     description:
       'As a systemic mental health professional, couples and family counselor, and EFT consultant, I accept adult, mentally healthy clients online or in person in Veszprém and Budapest, who turn to me with their life-situation difficulties.',
     cancellationPolicy:

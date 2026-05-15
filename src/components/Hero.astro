@@ -3,38 +3,45 @@ import heroImage from '@assets/images/hero.jpg';
 
 interface Props {
   title: string;
-  subtitle: string;
+  headline: string;
+  tagline: string;
 }
 
-const { title, subtitle } = Astro.props;
+const { title, headline, tagline } = Astro.props;
 ---
 
-<section class="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
+<section class="relative flex min-h-[70vh] items-center justify-center overflow-hidden lg:min-h-[85vh] xl:min-h-[90vh] 2xl:min-h-screen">
   <div class="absolute inset-0">
     <img
       src={heroImage.src}
       alt=""
       width={heroImage.width}
       height={heroImage.height}
-      class="size-full object-cover"
+      class="size-full object-cover object-[center_35%]"
       loading="eager"
       decoding="async"
     />
-    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/65"></div>
   </div>
 
   <div class="relative z-10 mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 lg:px-8">
     <h1
-      class="font-heading text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl"
+      class="hero-title-shadow font-heading text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl"
       style="animation: fade-in 0.8s ease both;"
     >
       {title}
     </h1>
     <p
-      class="mx-auto mt-6 max-w-3xl whitespace-pre-line text-base font-medium leading-relaxed text-white/90 sm:text-lg"
+      class="mx-auto mt-8 max-w-3xl text-balance text-base font-semibold uppercase leading-relaxed tracking-wide text-white sm:text-lg"
       style="animation: fade-in 0.8s ease 0.3s both;"
     >
-      {subtitle}
+      {headline}
+    </p>
+    <p
+      class="mx-auto mt-5 max-w-3xl whitespace-pre-line text-base italic leading-relaxed text-white/85 sm:text-lg"
+      style="animation: fade-in 0.8s ease 0.5s both;"
+    >
+      {tagline}
     </p>
   </div>
 

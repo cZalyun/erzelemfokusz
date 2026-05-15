@@ -21,7 +21,14 @@ const t = useTranslations('en');
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <div class="animate-on-scroll space-y-6">
         {t.about.introText.map((paragraph) => (
-          <p class="text-base leading-relaxed text-(--text-secondary)">{paragraph}</p>
+          <p
+            class:list={[
+              'text-base leading-relaxed text-(--text-secondary)',
+              paragraph.bold && 'font-semibold',
+            ]}
+          >
+            {paragraph.text}
+          </p>
         ))}
       </div>
       <div class="animate-on-scroll stagger-2 mt-8 rounded-xl border border-(--border-color) bg-(--bg-card) p-6">

@@ -25,7 +25,8 @@ export interface Translations {
   };
   readonly home: {
     readonly title: string;
-    readonly subtitle: string;
+    readonly subtitleHeadline: string;
+    readonly subtitleTagline: string;
     readonly emotionsTitle: string;
     readonly testimonials: readonly string[];
     readonly consultationTitle: string;
@@ -55,7 +56,10 @@ export interface Translations {
     readonly pageTitle: string;
     readonly name: string;
     readonly subtitle: string;
-    readonly introText: readonly string[];
+    readonly introText: readonly {
+      readonly text: string;
+      readonly bold?: boolean;
+    }[];
     readonly contactText: string;
     readonly timelineTitle: string;
     readonly timeline: readonly {
@@ -106,21 +110,28 @@ export interface Translations {
   };
   readonly groupsPage: {
     readonly pageTitle: string;
-    readonly listIntro: string;
-    readonly groups: readonly string[];
-    readonly joinInfo: string;
+    readonly categories: readonly {
+      readonly title: string;
+      readonly description: string;
+    }[];
+    readonly joinInfo: {
+      readonly title: string;
+      readonly description: string;
+    };
     readonly contactLabel: string;
     readonly contactEmail: string;
     readonly contactPhone: string;
   };
   readonly pricingPage: {
     readonly pageTitle: string;
-    readonly individualTitle: string;
-    readonly individualPrice: string;
-    readonly individualDuration: string;
-    readonly couplesTitle: string;
-    readonly couplesPrice: string;
-    readonly couplesDuration: string;
+    readonly services: readonly {
+      readonly id: 'individual' | 'couples';
+      readonly title: string;
+      readonly duration: string;
+      readonly locationsLabel: string;
+      readonly description: string;
+      readonly feeLabel: string;
+    }[];
     readonly description: string;
     readonly cancellationPolicy: string;
     readonly disclaimer: string;

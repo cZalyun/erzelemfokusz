@@ -52,3 +52,36 @@ export const LOCATIONS_EN: readonly Location[] = [
     days: ['Friday', 'Saturday'],
   },
 ] as const;
+
+export type ServiceId = 'individual' | 'couples';
+
+export interface ServiceFee {
+  readonly city: string;
+  readonly amount: string;
+}
+
+export interface ServicePricing {
+  readonly id: ServiceId;
+  readonly fees: readonly ServiceFee[];
+}
+
+export const PRICING: readonly ServicePricing[] = [
+  {
+    id: 'individual',
+    fees: [
+      { city: 'Budapest', amount: '20.000 Ft' },
+      { city: 'Veszprém', amount: '15.000 Ft' },
+    ],
+  },
+  {
+    id: 'couples',
+    fees: [
+      { city: 'Budapest', amount: '35.000 Ft' },
+      { city: 'Veszprém', amount: '25.000 Ft' },
+    ],
+  },
+] as const;
+
+export function getFeesById(id: ServiceId): readonly ServiceFee[] {
+  return PRICING.find((p) => p.id === id)?.fees ?? [];
+}

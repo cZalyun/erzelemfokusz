@@ -29,13 +29,14 @@
 :root {
   --bg-primary: var(--color-cream-50);
   --bg-secondary: var(--color-cream-100);
-  --bg-accent: var(--color-brand-600);
+  --bg-accent: var(--color-brand-700);
   --bg-card: white;
 
   --text-primary: var(--color-brand-900);
   --text-secondary: var(--color-brand-700);
   --text-muted: var(--color-brand-400);
   --text-on-accent: #ffffff;
+  --text-on-accent-muted: oklch(0.96 0.02 80 / 0.78);
 
   --border-color: var(--color-cream-300);
   --border-accent: var(--color-brand-300);
@@ -55,6 +56,7 @@
   --text-secondary: var(--color-cream-200);
   --text-muted: var(--color-brand-300);
   --text-on-accent: #ffffff;
+  --text-on-accent-muted: oklch(0.96 0.02 80 / 0.78);
 
   --border-color: oklch(0.30 0.03 15);
   --border-accent: var(--color-brand-500);
@@ -77,11 +79,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--text-primary);
+@layer base {
+  :where(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-primary);
+  }
+}
+
+.hero-title-shadow {
+  text-shadow: 0 2px 24px oklch(0 0 0 / 0.45);
 }
 
 ::selection {

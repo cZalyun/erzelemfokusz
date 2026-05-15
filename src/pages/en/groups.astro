@@ -16,26 +16,29 @@ const telHref = `tel:${t.groupsPage.contactPhone.replace(/[^+\d]/g, '')}`;
   <PageHeader title={t.groupsPage.pageTitle} />
 
   <section class="py-16">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <div class="animate-on-scroll rounded-2xl border border-(--border-color) bg-(--bg-card) p-8 shadow-sm sm:p-10">
-        <h2 class="mb-6 font-heading text-2xl font-bold text-(--text-primary)">
-          {t.groupsPage.listIntro}
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-6 sm:grid-cols-2">
+        {t.groupsPage.categories.map((category, index) => (
+          <article class={`animate-on-scroll stagger-${Math.min(index + 1, 5)} flex flex-col gap-3 rounded-2xl border border-(--border-color) bg-(--bg-card) p-6 shadow-sm transition-shadow hover:shadow-md sm:p-8`}>
+            <h2 class="font-heading text-xl font-semibold text-(--text-primary)">
+              {category.title}
+            </h2>
+            <p class="text-base leading-relaxed text-(--text-secondary)">
+              {category.description}
+            </p>
+          </article>
+        ))}
+      </div>
+
+      <div class="animate-on-scroll stagger-3 mt-10 rounded-2xl border border-(--border-color) bg-(--bg-card) p-8 shadow-sm sm:p-10">
+        <h2 class="font-heading text-xl font-semibold text-(--text-primary)">
+          {t.groupsPage.joinInfo.title}
         </h2>
-
-        <ul class="space-y-3">
-          {t.groupsPage.groups.map((group) => (
-            <li class="flex gap-3 text-base leading-relaxed text-(--text-secondary)">
-              <span class="mt-2 inline-block size-2 flex-shrink-0 rounded-full bg-(--bg-accent)"></span>
-              <span>{group}</span>
-            </li>
-          ))}
-        </ul>
-
-        <p class="mt-6 text-base italic text-(--text-secondary)">
-          {t.groupsPage.joinInfo}
+        <p class="mt-2 text-base leading-relaxed text-(--text-secondary)">
+          {t.groupsPage.joinInfo.description}
         </p>
 
-        <div class="mt-8 border-t border-(--border-color) pt-6">
+        <div class="mt-6 border-t border-(--border-color) pt-6">
           <p class="text-sm font-semibold uppercase tracking-wide text-(--text-muted)">
             {t.groupsPage.contactLabel}
           </p>

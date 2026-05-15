@@ -29,8 +29,10 @@ export const hu: Translations = {
   },
   home: {
     title: 'ÉrzelemFókusz',
-    subtitle:
-      'Érzelmi fókuszú mentálhigiénés kísérés egyéni élethelyzetekben és párkapcsolati nehézségekben\nKapcsolati nehézségek, érzelmi elakadások?\nSzemélyes fejlődés – lépésről lépésre, biztonságos közegben',
+    subtitleHeadline:
+      'ÉRZELMI TÁMOGATÁS ÉS MENTÁLHIGIÉNÉS KÍSÉRÉS EGYÉNI ÉLETHELYZETEKBEN ÉS PÁRKAPCSOLATI NEHÉZSÉGEKBEN',
+    subtitleTagline:
+      'Kapcsolati nehézségek, érzelmi elakadások?\nSzemélyes fejlődés – lépésről lépésre, biztonságos közegben',
     emotionsTitle: 'Érzelmek, és ami azok mögött van!',
     testimonials: [
       'Megmutatják mitől félünk.',
@@ -101,13 +103,29 @@ export const hu: Translations = {
     name: 'Kőrösi Edina',
     subtitle: 'mentálhigiénés szakember, önismereti tréner és párkapcsolati coach',
     introText: [
-      '2019 óta mentálhigiénés szakemberként, párkapcsolati coachként és önismereti trénerként kísérem a hozzám fordulókat. Emellett mentálhigiénés szemlélettel oktatok felnőttek számára úszást, és támogatom a vízbiztonság kialakulását – itt kapcsolódik be a holisztikus szemléletem is.',
-      'Számomra a segítői munka alapja a kapcsolódás. Egy biztonságos, elfogadó jelenlét, ahol valódi, támogató minőségű találkozás történhet. Hiszem, hogy minden változás és fejlődés ebből a kapcsolódásból tud megszületni.',
-      'A segítői munka és a vízben szerzett tapasztalatok ugyanarra tanítanak: a bizalom, a jelenlét és a fokozatosság erejére, a saját ütem tiszteletben tartása mellett. Ez megjelenhet egy csendes belső felismerésben, vagy egy gyakorlati pillanatban is, amikor a feszültséget lassan felváltja a bizalom és a biztonságérzet.',
-      'A közös munka egyik legfontosabb része számomra a változás folyamatának kísérése. Amikor valaki egyre közelebb kerül önmagához – nemcsak küzd, hanem elkezd jelen lenni önmagában, és megtapasztalja a saját stabilitását és belső erejét.',
-      'A rendszer-szemléletű, érzelmekre fókuszáló párkapcsolati munka különösen közel áll hozzám. Hiszem, hogy a kapcsolatokban is létrejöhet egy olyan biztonságos tér, ahol megértés, tisztulás és újrarendeződés történhet – és ahol a kapcsolódás új minősége születhet meg.',
-      'Közös megegyezés esetén pszichodramatikus eszközökkel és rendszertáblával is dolgozom, hogy mélyebb rálátást nyerjünk az elakadásokra és a változás lehetőségeire.',
-      'Szeretettel várlak egy első beszélgetésre – akár egyéni, akár páros formában keresel támogatást. Az első alkalom célja, hogy együtt lássuk, mi szolgálja legjobban a továbblépést.',
+      {
+        text: '2018 óta mentálhigiénés szemléletben kísérem azokat, akik életvezetési nehézségekkel, belső elakadásokkal vagy párkapcsolati kérdésekkel fordulnak hozzám. Munkámban egyéni és párkonzultációs folyamatokat vezetek, ahol a hangsúly a megértésen, az önreflexión és a kapcsolati minták felismerésén van.',
+      },
+      {
+        text: 'A Semmelweis Egyetemen szereztem mentálhigiénés szakember végzettségemet, ezt követően párkapcsolati és rendszerszemléletű képzésekkel mélyítettem a szakmai tudásomat.',
+        bold: true,
+      },
+      {
+        text: 'Számomra a segítői munka alapja a kapcsolódás: egy biztonságos, elfogadó jelenlét, ahol valódi találkozás jöhet létre. Hiszem, hogy a változás nem külső tanácsokból születik meg, hanem ebből a kapcsolódásból és a belső rendeződés folyamatából.',
+      },
+      {
+        text: 'A rendszerben gondolkodó, érzelmekre fókuszáló párkapcsolati munka különösen közel áll hozzám. A közös folyamat célja, hogy a felek jobban értsék saját működésüket és egymást, így egy átláthatóbb, élhetőbb érzelmi légkör jöhessen létre.',
+      },
+      {
+        text: 'Munkámban – közös megegyezés esetén – pszichodramatikus és rendszer-szemléletű eszközöket is használok, amelyek segítik a helyzetek mélyebb megértését és a belső folyamatok tisztulását.',
+      },
+      {
+        text: 'Szemléletemet a jelenlét, a fokozatosság és a saját ritmus tisztelete határozza meg – legyen szó egyéni folyamatokról vagy párkapcsolati helyzetekről.',
+      },
+      {
+        text: 'Szeretettel várlak akár egyénileg, akár pároddal egy első beszélgetésre, ahol közösen megnézzük, mi lehet számodra / számotokra a következő, leginkább támogató lépés.',
+        bold: true,
+      },
     ],
     contactText: 'Elérhetőség:',
     timelineTitle: 'SZAKMAI ÉLETUTAM',
@@ -186,26 +204,64 @@ export const hu: Translations = {
   },
   groupsPage: {
     pageTitle: 'Csoportok',
-    listIntro: 'Csoportjaink:',
-    groups: [
-      'Önismereti',
-      'Hit és Spirituális',
-      'Ölelj át tematikus kurzus / 4 napos elvonulások párok részére (Görögországban)',
-      'Szabadidős (túrázás, városnézés, kerékpározás, fürdés)',
+    categories: [
+      {
+        title: 'Önismereti csoport',
+        description:
+          'Kiscsoportos folyamatok az önismeret, belső mintázatok és kapcsolati működések mélyebb megértésére, érzelmekre fókuszáló szemlélettel.',
+      },
+      {
+        title: 'Belső világ és életkérdések csoport',
+        description:
+          'Olyan beszélgetőkör, ahol a hangsúly a személyes élmények, élethelyzetek és belső folyamatok megértésén van. A cél a tisztulás, rendeződés és önreflexió támogatása.',
+      },
+      {
+        title: '„Ölelj át!” – tematikus párprogramok és elvonulások',
+        description:
+          'Pároknak szóló intenzív folyamatok, ahol a kapcsolati működés, az érzelmi kapcsolódás és a kommunikáció kerül fókuszba, nyugodt, támogató környezetben.',
+      },
+      {
+        title: 'Segítő szakmában dolgozók számára – szakmai beszélgetőkör / szupervíziós jellegű csoport',
+        description:
+          'Olyan kiscsoportos szakmai tér, amely segítő munkát végzőknek szól. Cél a szakmai önreflexió, a kiégés megelőzése, valamint a segítői szerepben megélt helyzetek feldolgozása.',
+      },
+      {
+        title: 'Szabadidős és közösségi programok',
+        description:
+          'Közös élményprogramok: túrázás, városnézés, kerékpározás, vizes programok – a kapcsolódás és feltöltődés jegyében.',
+      },
     ],
-    joinInfo: 'folyamatos csatlakozási lehetőségekkel',
+    joinInfo: {
+      title: 'Folyamatos csatlakozási lehetőséggel',
+      description:
+        'Bizonyos csoportok nyitott rendszerben működnek, így folyamatosan lehet csatlakozni.',
+    },
     contactLabel: 'érdeklődni:',
     contactEmail: 'erzelemfokusz@gmail.com',
     contactPhone: '06-30-872-4413',
   },
   pricingPage: {
     pageTitle: 'Árak és Keretek',
-    individualTitle: 'Egyéni jelentkezés esetén:',
-    individualPrice: '15 000 ft / alkalom',
-    individualDuration: 'Az ülések hossza: 60-70 perc',
-    couplesTitle: 'Párok részére:',
-    couplesPrice: '25 000 ft / alkalom',
-    couplesDuration: 'Az ülések hossza: 90-120 perc (első alkalom 20 000 ft)',
+    services: [
+      {
+        id: 'individual',
+        title: 'Egyéni konzultáció',
+        duration: 'Időtartam: 60–90 perc',
+        locationsLabel: 'Helyszín: Budapest / Veszprém / online',
+        description:
+          'Az egyéni beszélgetések során élethelyzeti elakadásokkal, belső feszültségekkel, döntési nehézségekkel és kapcsolati mintázatokkal dolgozunk.',
+        feeLabel: 'Díj:',
+      },
+      {
+        id: 'couples',
+        title: 'Párkonzultáció / Ölelj át! 1+7 alkalmas kurzus',
+        duration: 'Időtartam: 90–120 perc',
+        locationsLabel: 'Helyszín: Budapest / Veszprém / online',
+        description:
+          'A párkonzultációk célja a kapcsolati működés megértése, a kommunikációs nehézségek tisztázása és a konfliktusok mögötti mintázatok feltárása.',
+        feeLabel: 'Díj:',
+      },
+    ],
     description:
       'Rendszerszemléletű mentálhigiénés szakemberként, pár és család lelkigondozóként, ÉFT-konzulensként online vagy személyesen fogadok felnőtt, mentálisan egészséges klienseket, Veszprémben ill. Budapesten, akik élethelyzeti elakadásaikkal fordulhatnak hozzám.',
     cancellationPolicy:
